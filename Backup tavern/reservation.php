@@ -3,8 +3,8 @@ session_start();
 require_once 'db_connect.php'; // Include your database connection
 
 // Check if the user is logged in AND is an admin
-if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true || $_SESSION['username'] !== 'admin') {
-    header('Location: login.php');
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true || $_SESSION['is_admin'] !== true) {
+    header('Location: index.php');
     exit;
 }
 
@@ -162,7 +162,7 @@ mysqli_close($link);
                 <div class="header-content">
                     <div class="admin-header-right">
                         <img src="images/PEOPLE.jpg" alt="User Avatar" style="width: 40px; height: 40px; border-radius: 50%;">
-                        <span>Vincent Paul</span>
+                        <span><?php echo $_SESSION['username']; ?></span>
                         <span class="admin-role">Admin</span>
                     </div>
                 </div>

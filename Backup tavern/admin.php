@@ -5,7 +5,7 @@ require_once 'db_connect.php'; // Include your database connection
 // Check if the user is logged in AND is an admin
 // For a real system, you'd have a 'role' column in your users table (e.g., 'admin', 'user')
 // For now, we'll use a simple check for username 'admin' as set up in login.php
-if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true || $_SESSION['username'] !== 'admin') {
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true || $_SESSION['is_admin'] !== true) {
     header('Location: login.php'); // Redirect to login page if not logged in or not admin
     exit;
 }

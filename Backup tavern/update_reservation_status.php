@@ -7,7 +7,7 @@ header('Content-Type: application/json'); // Set header to return JSON response
 $response = ['success' => false, 'message' => ''];
 
 // Basic authentication check: Only logged-in admin can update status
-if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true || $_SESSION['username'] !== 'admin') {
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true || $_SESSION['is_admin'] !== true) {
     $response['message'] = 'Unauthorized access. Please log in as an administrator.';
     echo json_encode($response);
     exit;
