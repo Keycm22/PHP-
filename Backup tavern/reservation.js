@@ -2,7 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     const reservationModal = document.getElementById('reservationModal');
-    const closeButton = document.querySelector('.modal .close-button');
+    const closeButtons = document.querySelectorAll('.modal .close-button');
     const editReservationForm = document.getElementById('editReservationForm');
 
     // Form fields in the modal
@@ -39,14 +39,16 @@ document.addEventListener('DOMContentLoaded', () => {
         modalStatus.value = reservationData.status;
         modalCreatedAt.value = reservationData.created_at;
 
-        reservationModal.style.display = 'block';
+        reservationModal.style.display = 'flex';
     }
 
     // Close Modals (general function for both)
-    if (closeButton) {
-        closeButton.addEventListener('click', () => {
-            reservationModal.style.display = 'none';
-            availabilityModal.style.display = 'none'; // Close availability modal too
+    if (closeButtons) {
+        closeButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                reservationModal.style.display = 'none';
+                availabilityModal.style.display = 'none'; // Close availability modal too
+            });
         });
     }
 
@@ -185,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- New: Overall Availability Check Logic ---
     if (checkOverallAvailabilityBtn) {
         checkOverallAvailabilityBtn.addEventListener('click', () => {
-            availabilityModal.style.display = 'block';
+            availabilityModal.style.display = 'flex';
             availabilityResultDiv.style.display = 'none'; // Hide previous results
             availabilityResultDiv.innerHTML = ''; // Clear previous results
 
@@ -221,7 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const result = await response.json();
 
-                availabilityResultDiv.style.display = 'block';
+                availabilityResultDiv.style.display = 'flex';
                 if (result.success) {
                     if (result.available) {
                         availabilityResultDiv.classList.add('available');
@@ -246,7 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             } catch (error) {
                 console.error('Error checking availability:', error);
-                availabilityResultDiv.style.display = 'block';
+                availabilityResultDiv.style.display = 'flex';
                 availabilityResultDiv.classList.add('unavailable');
                 availabilityResultDiv.innerHTML = `<p>An error occurred while checking availability.</p>`;
             }

@@ -591,7 +591,6 @@ table tbody tr:hover {
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.5); /* Darker overlay */
-    display: flex;
     justify-content: center;
     align-items: center;
 }
