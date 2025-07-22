@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,44 +8,14 @@
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="header.css">
 
- 
-    
-   
-    </head>
+
+
+
+</head>
+
 <body>
 
-    <header class="main-header">
-        <div class="header-content">
-            <div class="logo">
-                <div class="logo-main-line">
-                    <span>Tavern Publico</span>
-                </div>
-                <span class="est-year">EST ★ 2024</span>
-            </div>
-            <nav class="main-nav">
-    <ul>
-        <li><a href="index.php">Home</a></li>
-        <li><a href="menu.php">Menu</a></li>
-        <li><a href="about.php">About</a></li>
-        <li><a href="events.php">Events</a></li>
-        <li><a href="gallery.php">Gallery</a></li>
-        <li><a href="contact.php">Contact</a></li>
-    </ul>
-</nav>
-            <?php
-            session_start(); // Start the session at the very beginning of index.php
-            if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
-                // User is logged in, show only the Logout button
-                echo '<div class="user-profile-menu">';
-                echo '<a href="logout.php" class="btn header-button logout-button">Logout</a>'; // Added a class for potential styling
-                echo '</div>';
-            } else {
-                // User is not logged in, show Sign In/Sign Up button
-                echo '<a href="#" class="btn header-button" id="openModalBtn">Sign In/Sign Up</a>';
-            }
-            ?>
-        </div>
-    </header>
+    <?php include 'partials/header.php'; ?>
 
     <section class="hero-section">
         <div class="slideshow-container">
@@ -114,7 +85,8 @@
                 <div class="specialty-card">
                     <img src="images/1-OS.jpg" alt="Craft Burger Deluxe">
                     <h3>Craft Burger Deluxe</h3>
-                    <p>House-made patty with aged cheddar, caramelized onions, and our secret sauce on a brioche bun.</p>
+                    <p>House-made patty with aged cheddar, caramelized onions, and our secret sauce on a brioche bun.
+                    </p>
                     <div class="price-arrow">
 
 
@@ -152,8 +124,11 @@
                 </div>
                 <div class="story-text">
                     <h2>Our Story</h2>
-                    <p>Founded in 2024, Tavern Publico was born from a passion for bringing together exceptional craft food and drinks in a welcoming environment. Our chefs use locally-sourced ingredients to create memorable dishes that honor tradition while embracing innovation.</p>
-                    <p>Every visit to Tavern Publico is an opportunity to experience the warmth of our hospitality and the quality of our cuisine.</p>
+                    <p>Founded in 2024, Tavern Publico was born from a passion for bringing together exceptional craft
+                        food and drinks in a welcoming environment. Our chefs use locally-sourced ingredients to create
+                        memorable dishes that honor tradition while embracing innovation.</p>
+                    <p>Every visit to Tavern Publico is an opportunity to experience the warmth of our hospitality and
+                        the quality of our cuisine.</p>
                     <a href="gallery.html" class="btn btn-outline-dark">Learn More About Us</a>
                 </div>
             </div>
@@ -196,7 +171,8 @@
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <div class="stars">★★★★★</div>
-                    <p>"The foods was absolutely amazing! Juicy, flavorful, and perfectly cooked. The atmosphere was cozy and the staff was attentive. Will definitely be back!"</p>
+                    <p>"The foods was absolutely amazing! Juicy, flavorful, and perfectly cooked. The atmosphere was
+                        cozy and the staff was attentive. Will definitely be back!"</p>
                     <div class="guest-info">
                         <img src="images/OIP.webp" alt="Maria Santos">
                         <div class="guest-details">
@@ -207,7 +183,8 @@
                 </div>
                 <div class="testimonial-card">
                     <div class="stars">★★★★★</div>
-                    <p>"Tavern Publico has become our go-to spot for date nights. The foods are creative and delicious, and the ambiance is perfect for a romantic evening. Highly recommend!"</p>
+                    <p>"Tavern Publico has become our go-to spot for date nights. The foods are creative and delicious,
+                        and the ambiance is perfect for a romantic evening. Highly recommend!"</p>
                     <div class="guest-info">
                         <img src="images/man-3d-avatar-4-1024.webp" alt="Maria Santos">
                         <div class="guest-details">
@@ -218,7 +195,9 @@
                 </div>
                 <div class="testimonial-card">
                     <div class="stars">★★★★★</div>
-                    <p>"We hosted our company dinner at Tavern Publico and it was perfect! The staff was accommodating, the food was excellent, and everyone had a great time. Thank you for making our event special!"</p>
+                    <p>"We hosted our company dinner at Tavern Publico and it was perfect! The staff was accommodating,
+                        the food was excellent, and everyone had a great time. Thank you for making our event special!"
+                    </p>
                     <div class="guest-info">
                         <img src="images/ICON-MALE_Male-And-Female-Review-Messages.png" alt="Anna Cruz">
                         <div class="guest-details">
@@ -235,7 +214,8 @@
         <div class="container">
             <div class="cta-content">
                 <h2>Ready to Experience Tavern Publico?</h2>
-                <p>Join us for an unforgettable dining experience. Whether you're planning a romantic dinner, family gathering, or just want to enjoy great food and drinks, we're here to serve you.</p>
+                <p>Join us for an unforgettable dining experience. Whether you're planning a romantic dinner, family
+                    gathering, or just want to enjoy great food and drinks, we're here to serve you.</p>
                 <div class="cta-buttons">
                     <a href="#" class="btn btn-outline-white">Reserve a Table</a>
                     <a href="#" class="btn btn-outline-white">Order Online</a>
@@ -245,90 +225,54 @@
         </div>
     </section>
 
-    <footer class="main-footer">
-        <div class="container footer-grid">
-            <div class="footer-about">
-                <img src="logo.png" alt="Tavern Publico Footer Logo">
-                <p>Tavern Publico</p>
-                <p>EST ★ 2024</p>
-                <p>Taste the tradition, savor the innovation.</p>
-                <div class="social-icons">
-                    <a href="#"><img src="images/fb.png" alt="Facebook"></a>
-                    <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
-                    <a href="#"><img src="images/instagram.png" alt="Instagram"></a>
-                </div>
-            </div>
-            <div class="footer-links">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="menu.html">Menu</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="events.html">Events</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-contact">
-                <h3>Contact Us</h3>
-                <p>123 Main Street, Anytown, Philippines</p>
-                <p>Email: info@tavernpublico.com</p>
-                <p>Phone: +63 912 345 6789</p>
-            </div>
-            <div class="footer-hours">
-                <h3>Hours</h3>
-                <p>Tuesday - Thursday: 5:00 PM - 10:00 PM</p>
-                <p>Friday - Saturday: 5:00 PM - 11:00 PM</p>
-                <p>Sunday: 11:00 AM - 3:00 PM (Brunch)</p>
-                <p>Monday: Closed</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2024 Tavern Publico. All rights reserved.</p>
-        </div>
-    </footer>
+    <?php include 'partials/footer.php'; ?>
 
     <div id="signInUpModal" class="modal">
-    <div class="modal-content">
-        <span class="close-button">&times;</span>
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
 
-        <div id="signInPanel" class="modal-panel active">
-            <h2 class="modal-title">Sign In</h2>
-            <form id="signInForm" class="modal-form">
-                <div class="form-group">
-                    <label for="loginUsernameEmail">Username or Email</label>
-                    <input type="text" id="loginUsernameEmail" name="username_email" placeholder="Enter your username or email" required>
-                </div>
-                <div class="form-group">
-                    <label for="loginPassword">Password</label>
-                    <input type="password" id="loginPassword" name="password" placeholder="Enter your password" required>
-                </div>
-                <button type="submit" class="btn btn-primary modal-btn">Sign In</button>
-            </form>
-            <p class="modal-bottom-text">Don't have an account? <a href="#" class="switch-to-register">Register here</a></p>
-        </div>
+            <div id="signInPanel" class="modal-panel active">
+                <h2 class="modal-title">Sign In</h2>
+                <form id="signInForm" class="modal-form">
+                    <div class="form-group">
+                        <label for="loginUsernameEmail">Username or Email</label>
+                        <input type="text" id="loginUsernameEmail" name="username_email"
+                            placeholder="Enter your username or email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" name="password" placeholder="Enter your password"
+                            required>
+                    </div>
+                    <button type="submit" class="btn btn-primary modal-btn">Sign In</button>
+                </form>
+                <p class="modal-bottom-text">Don't have an account? <a href="#" class="switch-to-register">Register
+                        here</a></p>
+            </div>
 
-        <div id="registerPanel" class="modal-panel">
-            <h2 class="modal-title">Register</h2>
-            <form id="registerForm" class="modal-form">
-                <div class="form-group">
-                    <label for="registerName">Username</label>
-                    <input type="text" id="registerName" name="username" placeholder="Enter your username" required>
-                </div>
-                <div class="form-group">
-                    <label for="registerEmail">Email</label>
-                    <input type="email" id="registerEmail" name="email" placeholder="Enter your email" required>
-                </div>
-                <div class="form-group">
-                    <label for="registerPassword">Password</label>
-                    <input type="password" id="registerPassword" name="password" placeholder="Create a password" required>
-                </div>
-                <button type="submit" class="btn btn-primary modal-btn">Register</button>
-            </form>
-            <p class="modal-bottom-text">Already have an account? <a href="#" class="switch-to-signin">Sign In here</a></p>
+            <div id="registerPanel" class="modal-panel">
+                <h2 class="modal-title">Register</h2>
+                <form id="registerForm" class="modal-form">
+                    <div class="form-group">
+                        <label for="registerName">Username</label>
+                        <input type="text" id="registerName" name="username" placeholder="Enter your username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerEmail">Email</label>
+                        <input type="email" id="registerEmail" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerPassword">Password</label>
+                        <input type="password" id="registerPassword" name="password" placeholder="Create a password"
+                            required>
+                    </div>
+                    <button type="submit" class="btn btn-primary modal-btn">Register</button>
+                </form>
+                <p class="modal-bottom-text">Already have an account? <a href="#" class="switch-to-signin">Sign In
+                        here</a></p>
+            </div>
         </div>
     </div>
-</div>
 
     <script>
         // Get the modal
@@ -352,7 +296,7 @@
         // The current logic only applies if the "Sign In/Sign Up" button is present.
         // We'll manage the modal display more robustly in main.js.
         if (openModalBtn) {
-            openModalBtn.onclick = function() {
+            openModalBtn.onclick = function () {
                 modal.style.display = "flex"; // Show the modal container
                 // Ensure only signInPanel is active when opening
                 signInPanel.classList.add("active");
@@ -363,21 +307,21 @@
 
         // When the user clicks on <span> (x), close the modal
         if (closeButton) {
-            closeButton.onclick = function() {
+            closeButton.onclick = function () {
                 modal.style.display = "none";
             }
         }
 
         // When the user clicks anywhere outside of the modal content, close it
-        window.onclick = function(event) {
-          if (event.target == modal) {
-            modal.style.display = "none";
-          }
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
         }
 
         // Function to switch to register panel
-        switchToRegisterLinks.forEach(function(link) {
-            link.onclick = function(event) {
+        switchToRegisterLinks.forEach(function (link) {
+            link.onclick = function (event) {
                 event.preventDefault(); // Prevent default link behavior
                 signInPanel.classList.remove("active");
                 registerPanel.classList.add("active");
@@ -386,7 +330,7 @@
 
         // Function to switch back to sign-in panel
         if (switchToSignInLink) {
-            switchToSignInLink.onclick = function(event) {
+            switchToSignInLink.onclick = function (event) {
                 event.preventDefault(); // Prevent default link behavior
                 registerPanel.classList.remove("active");
                 signInPanel.classList.add("active");
@@ -396,4 +340,5 @@
     <script src="main.js"></script>
 
 </body>
+
 </html>

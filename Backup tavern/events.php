@@ -9,48 +9,7 @@
 </head>
 <body>
 
-    <header class="main-header">
-        <div class="header-content">
-            <div class="logo">
-                <div class="logo-main-line">
-                    <span>Tavern Publico</span>
-                </div>
-                <span class="est-year">EST ★ 2024</span>
-            </div>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.php">Home</a></li>
-                    <li><a href="menu.php">Menu</a></li>
-                    <li><a href="about.php">About</a></li>
-                    <li><a href="events.php">Events</a></li>
-                    <li><a href="gallery.php">Gallery</a></li>
-                    <li><a href="contact.php">Contact</a></li>
-                </ul>
-            </nav>
-             <?php
-            session_start(); // Start the session at the very beginning of index.php
-            if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
-                // User is logged in, show profile button
-                $profilePicPath = ''; // Default path
-                // You would typically fetch the user's actual profile picture path from the database here
-                // e.g., if(isset($_SESSION['profile_pic'])) { $profilePicPath = $_SESSION['profile_pic']; }
-
-                echo '<div class="user-profile-menu">';
-                echo '<button class="btn header-button profile-button">';
-                echo '<span class="username-text">' . htmlspecialchars($_SESSION['username']) . '</span> <i class="fas fa-caret-down"></i>';
-                echo '</button>';
-                echo '<div class="profile-dropdown-content">';
-                echo '<a href="#profile-settings">Profile Settings</a>';
-                echo '<a href="logout.php">Logout</a>';
-                echo '</div>';
-                echo '</div>';
-            } else {
-                // User is not logged in, show Sign In/Sign Up button
-                echo '<a href="#" class="btn header-button" id="openModalBtn">Sign In/Sign Up</a>';
-            }
-            ?>
-        </div>
-    </header>
+    <?php include 'partials/header.php'; ?>
 
     <main>
 
@@ -91,44 +50,7 @@
         </section>
     </main>
 
-    <footer class="main-footer">
-        <div class="container footer-grid">
-            <div class="footer-about">
-                <img src="456245474_122124580028367938_382156898811842987_n (1).jpg" alt="Tavern Publico Footer Logo" style="height: 35px; margin-bottom: 12px;">
-                <p>Tavern Publico</p>
-                <p>EST ★ 2024</p>
-                <p>Taste the tradition, savor the innovation.</p>
-            </div>
-            <div class="footer-links">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="menu.html">Menu</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="events.html">Events</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-contact">
-                <h3>Contact Us</h3>
-                <p>123 Main Street, Guagua,</p>
-                <p>Pampanga</p>
-                <p>(045) 123-4567</p>
-                <p>info@tavernpublico.com</p>
-            </div>
-            <div class="footer-hours">
-                <h3>Hours</h3>
-                <p>Monday - Thursday: 11am - 10pm</p>
-                <p>Friday - Saturday: 11am - 12am</p>
-                <p>Sunday: 10am - 9pm</p>
-            </div>
-        </div>
-        <div class="container" style="text-align:center; padding-top: 30px; margin-top: 30px; border-top: 1px solid #333;">
-            <p>&copy; 2025 Tavern Publico. All rights reserved.</p>
-            <p style="margin-top: 10px;"><a href="#" style="color:#bbb; text-decoration:none;">Privacy Policy</a> | <a href="#" style="color:#bbb; text-decoration:none;">Terms of Service</a></p>
-        </div>
-    </footer>
+    <?php include 'partials/header.php'; ?>
 
       <div id="signInUpModal" class="modal">
     <div class="modal-content">
