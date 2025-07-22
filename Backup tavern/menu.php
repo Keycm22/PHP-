@@ -417,7 +417,7 @@
             });
 
             // Initial display: show Asian category by default on page load
-            filterMenuItems('asian');
+            filterMenuItems('Specialty');
 
             // Search functionality (simple client-side filter)
             searchInput.addEventListener('keyup', () => {
