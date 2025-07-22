@@ -1,0 +1,88 @@
+/* main.css */
+
+/* Add these styles to your main.css file */
+
+/* User Profile Menu and Dropdown */
+.user-profile-menu {
+    position: relative;
+    display: inline-block; /* Allows dropdown to position relative to it */
+    margin-left: 20px; /* Space from navigation */
+}
+
+.profile-button {
+    background-color: #FFD700; /* Gold background */
+    color: #2c3e50; /* Dark text for contrast */
+    padding: 10px 18px;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Added color transition */
+    display: flex; /* To align text and icon */
+    align-items: center;
+    gap: 8px; /* Space between text and icon */
+    text-decoration: none; /* Ensure no underline if it's an <a> tag */
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+.profile-button:hover {
+    background-color: #e6c200; /* Slightly darker gold on hover */
+    color: #1a242f; /* Slightly darker text on hover for more contrast */
+}
+
+.profile-dropdown-content {
+    display: none; /* Hidden by default */
+    position: absolute;
+    background-color: #2c3e50; /* Darker background for dropdown */
+    min-width: 180px; /* Slightly increased width for content */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4); /* Darker shadow for depth */
+    z-index: 100; /* Ensure it's above other content */
+    border-radius: 5px;
+    top: 100%; /* Position below the button */
+    right: 0; /* Align to the right of the button */
+    margin-top: 8px; /* Small gap between button and dropdown */
+    overflow: hidden; /* Ensures border-radius applies to children */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border for definition */
+}
+
+/* This is the crucial change: show dropdown when 'show-dropdown' class is present */
+.profile-dropdown-content.show-dropdown {
+    display: block;
+}
+
+.profile-dropdown-content a {
+    color: #ecf0f1; /* Light text color */
+    padding: 12px 18px; /* Adjusted padding for more vertical space */
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    font-size: 0.95em; /* Slightly smaller font for dropdown items */
+}
+
+.profile-dropdown-content a:hover {
+    background-color: #34495e; /* Even darker on hover */
+    color: #FFD700; /* Gold text on hover */
+}
+
+/* Ensure the Font Awesome caret icon is loaded if you use it */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
+/* Header button alignment adjustments for both states */
+.main-header .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* Additional adjustment for the main-header if needed for consistent spacing */
+.main-header {
+    /* Your existing main-header styles */
+    padding-right: 20px; /* Ensure there's enough padding on the right for the button */
+}
+
+/* Consider adding a specific style for the caret icon if you're using Font Awesome */
+.profile-button i {
+    font-size: 0.9em; /* Adjust icon size if necessary */
+    margin-left: 5px; /* Ensure space between text and icon */
+}
