@@ -74,7 +74,13 @@
         <div class="container">
             <h2>Reserve Your Table</h2>
             <p>Book your spot for an unforgettable dining experience at Tavern Publico.</p>
-            <a href="reserve.php" class="btn btn-primary reserve-now-btn">Reserve Now</a>
+            <?php
+            if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+                echo '<a href="reserve.php" class="btn btn-primary">Reserve Now</a>';
+            } else {
+                echo '<button class="btn btn-primary signin-button">Reserve Now</button>';
+            }
+            ?>
         </div>
     </section>
 

@@ -25,7 +25,7 @@
             echo '</div>';
         } else {
             // User is not logged in, show Sign In/Sign Up button
-            echo '<a href="#" class="btn header-button" id="openModalBtn">Sign In/Sign Up</a>';
+            echo '<a href="#" class="btn header-button signin-button" id="openModalBtn">Sign In/Sign Up</a>';
         }
         ?>
     </div>

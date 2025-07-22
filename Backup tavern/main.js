@@ -57,22 +57,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Sign In/Sign Up Modal Functionality ---
     var modal = document.getElementById("signInUpModal");
-    var openModalBtn = document.querySelector(".header-button"); // Targets the "Sign In/Sign Up" button
+    var openModalBtns = document.querySelectorAll(".signin-button"); // Targets the "Sign In/Sign Up" button
     var closeButton = document.querySelector(".modal .close-button");
     var signInPanel = document.getElementById("signInPanel");
     var registerPanel = document.getElementById("registerPanel");
     var switchToRegisterLinks = document.querySelectorAll(".switch-to-register");
     var switchToSignInLink = document.querySelector(".switch-to-signin");
 
-    // Open Modal - only if the button exists (i.e., user is not logged in)
-    if (openModalBtn && !openModalBtn.classList.contains('profile-button')) { // Check if it's the sign-in/up button, not the profile button
-        openModalBtn.onclick = function() {
-            modal.style.display = "flex"; // Show the modal container
-            // Ensure only signInPanel is active when opening
-            signInPanel.classList.add("active");
-            registerPanel.classList.remove("active");
+    openModalBtns.forEach(function(openModalBtn) {
+        // Open Modal - only if the button exists (i.e., user is not logged in)
+        if (openModalBtn && !openModalBtn.classList.contains('profile-button')) { // Check if it's the sign-in/up button, not the profile button
+            openModalBtn.onclick = function() {
+                modal.style.display = "flex"; // Show the modal container
+                // Ensure only signInPanel is active when opening
+                signInPanel.classList.add("active");
+                registerPanel.classList.remove("active");
+            }
         }
-    }
+    })
 
     // When the user clicks on <span> (x), close the modal
     if (closeButton) {
