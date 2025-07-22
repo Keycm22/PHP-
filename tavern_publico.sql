@@ -92,11 +92,11 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`user_id`, `username`, `email`, `password_hash`, `created_at`) VALUES
-(1, 'admin', 'keycm109@gmail.com', '$2y$10$/3fYTIq9ymjPWjHRo9TVoOrTaDtdzRQ69miUzRMdbWL6HU3aXuOVe', '2025-07-16 15:38:28'),
-(2, 'Keycm', 'pena@gmail.com', '$2y$10$LH1NKiOZ60zuEdwXCxsiW.FEIuhYYgaRiCiTF1NMkfn8/XgfPluK2', '2025-07-16 15:39:24'),
-(4, 'Vincent', 'penapaul858@gmail.com', '$2y$10$iUt/UwJYPEq4LjZ2bUGPkurg4MJ8pRZuzfCd4oYEOynFcipBBttB6', '2025-07-18 02:10:11'),
-(5, 'Vincent paul', 'vincentpaul@gmail.com', '$2y$10$OZY0VIWO4hPNwHLngCj/t.0V1g9yfE6ytnVaLDSeKodz3OPVUU.RG', '2025-07-18 05:13:09');
+INSERT INTO `users` (`user_id`, `username`, `email`, `password_hash`, `is_admin`, `created_at`) VALUES
+(1, 'admin', 'keycm109@gmail.com', '$2y$10$/3fYTIq9ymjPWjHRo9TVoOrTaDtdzRQ69miUzRMdbWL6HU3aXuOVe', 1,'2025-07-16 15:38:28'),
+(2, 'Keycm', 'pena@gmail.com', '$2y$10$LH1NKiOZ60zuEdwXCxsiW.FEIuhYYgaRiCiTF1NMkfn8/XgfPluK2', 0, '2025-07-16 15:39:24'),
+(4, 'Vincent', 'penapaul858@gmail.com', '$2y$10$iUt/UwJYPEq4LjZ2bUGPkurg4MJ8pRZuzfCd4oYEOynFcipBBttB6',0, '2025-07-18 02:10:11'),
+(5, 'Vincent paul', 'vincentpaul@gmail.com', '$2y$10$OZY0VIWO4hPNwHLngCj/t.0V1g9yfE6ytnVaLDSeKodz3OPVUU.RG', 0, '2025-07-18 05:13:09');
 
 --
 -- Indexes for dumped tables
