@@ -17,11 +17,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     $user_id = null;
+    $is_admin = false;
     $hashed_password = null;
     $db_username = null; // To store the actual username from DB
 
     // Prepare a select statement
-    $sql = "SELECT user_id, username, password_hash FROM users WHERE username = ? OR email = ?";
+    $sql = "SELECT user_id, username, password_hash, is_admin FROM users WHERE username = ? OR email = ?";
 
     if ($stmt = mysqli_prepare($link, $sql)) {
         mysqli_stmt_bind_param($stmt, "ss", $param_username_email, $param_username_email);
@@ -32,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             if (mysqli_stmt_num_rows($stmt) == 1) {
                 // Bind result variables
-                mysqli_stmt_bind_result($stmt, $user_id, $db_username, $hashed_password);
+                mysqli_stmt_bind_result($stmt, $user_id, $db_username, $hashed_password, $is_admin);
                 mysqli_stmt_fetch($stmt);
 
                 if (password_verify($password, $hashed_password)) {
@@ -41,9 +42,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $_SESSION['loggedin'] = true;
                     $_SESSION['user_id'] = $user_id;
                     $_SESSION['username'] = $db_username; // Store username in session
+                    $_SESSION['is_admin'] = boolval($is_admin);
 
                     $response['success'] = true;
                     $response['message'] = 'Login successful!';
+
                     // Decide redirect based on user role (placeholder for future)
                     // For now, redirect to index.php or admin.php if the user is 'admin'
                     if ($db_username === 'admin') { // You might want a more robust role management system

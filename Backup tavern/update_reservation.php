@@ -5,7 +5,7 @@ require_once 'db_connect.php'; // Include your database connection
 header('Content-Type: application/json');
 
 // Check if the user is logged in AND is an admin
-if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true || $_SESSION['username'] !== 'admin') {
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true || $_SESSION['is_admin'] !== true) {
     echo json_encode(['success' => false, 'message' => 'Unauthorized access.']);
     exit;
 }
