@@ -112,7 +112,7 @@ MYSQL_PORT=3345
 
 Navigate to the root directory of the project (where `docker-compose.yml` is located) in your terminal and run the following command:
 ```shell
-docker-compose up --build -d
+docker compose up --build -d
 ```
 
 * `docker-compose up`: Starts the services defined in `docker-compose.yml`.
