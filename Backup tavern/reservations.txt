@@ -1,3 +1,0 @@
-Date: 2025-07-15, Time: 19:00, Guests: 3, Name: keycm, Phone: 1234567765, Email: penapaul858@gmail.com, Status: Confirmed
-
-Date: 2025-07-16, Time: 11:00, Guests: 1, Name: edjohn garcia, Phone: 09371234567765d, Email: 858@gmail.com, Status: Pending
