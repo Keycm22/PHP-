@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                     // Decide redirect based on user role (placeholder for future)
                     // For now, redirect to index.php or admin.php if the user is 'admin'
-                    if ($db_username === 'admin') { // You might want a more robust role management system
+                    if ($_SESSION['is_admin']) { // You might want a more robust role management system
                         $response['redirect'] = 'admin.php';
                     } else {
                         $response['redirect'] = 'index.php'; // Redirect regular users to homepage
